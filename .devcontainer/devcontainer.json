@@ -1,0 +1,31 @@
+{
+	"name": "Marcocarmonadev Frontend",
+	"mounts": [
+		{
+			"source": "${localEnv:HOME}/.ssh/",
+			"target": "/home/vscode/.ssh/",
+			"type": "bind"
+		}
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"charliermarsh.ruff",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"christian-kohler.path-intellisense"
+			]
+		}
+	},
+	"containerEnv": {
+		"POETRY_VIRTUALENVS_IN_PROJECT": "true",
+		"STREAMLIT_SERVER_RUN_ON_SAVE": "true"
+	},
+	"image": "mcr.microsoft.com/devcontainers/python:3.12",
+	"runArgs": [
+		"--env-file=.envs/development.env",
+		"--name=marcocarmonadev-frontend-devcontainer",
+		"--rm"
+	],
+	"onCreateCommand": "curl -sSL https://install.python-poetry.org | python3 -",
+	"postCreateCommand": "poetry install"
+}
