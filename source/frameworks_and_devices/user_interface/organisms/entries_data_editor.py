@@ -25,24 +25,26 @@ def display():
 
     st.data_editor(
         key="entries_data_editor",
+        disabled=["uuid"],
         data=[entry.model_dump() for entry in entries],
         use_container_width=True,
         on_change=on_change,
-        num_rows="dynamic",
-        # kwargs={
-        #     "entries": entries,
-        # },
         column_order=[
+            "uuid",
             "concept",
             "amount",
             "due_date",
             "status",
         ],
         column_config={
+            "uuid": st.column_config.TextColumn(
+                label="UUID",
+                required=True,
+                width="small",
+            ),
             "concept": st.column_config.TextColumn(
                 label="Concept",
                 required=True,
-                width="medium",
             ),
             "amount": st.column_config.NumberColumn(
                 label="Amount",
