@@ -20,11 +20,10 @@ def display():
         )
 
     with st.form(
-        key="add-entry-form",
+        key="add_entry_form",
         border=False,
     ):
         column1, column2 = st.columns(2)
-
         with column1:
             st.text_input(
                 "Concept",
