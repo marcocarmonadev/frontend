@@ -26,9 +26,9 @@
 	"runArgs": [
 		"--env-file=.envs/development.env",
 		"--name=marcocarmonadev-frontend-devcontainer",
-		"--network=marcocarmonadev-backend-default",
-		"--rm"
+		"--network=marcocarmonadev-backend-default"
 	],
+	"initializeCommand": "make reopen",
 	"onCreateCommand": "curl -sSL https://install.python-poetry.org | python3 -",
 	"postCreateCommand": "poetry install"
 }
