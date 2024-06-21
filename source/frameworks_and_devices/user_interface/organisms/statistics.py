@@ -8,16 +8,16 @@ def display():
     column1, column2, column3 = st.columns(3)
 
     column1.metric(
-        label="Incomes",
-        value=entries_statistics["income_amount"],
+        label="Income amount",
+        value=f'${entries_statistics["income_amount"]}',
     )
 
     column2.metric(
-        label="Expenses",
-        value=entries_statistics["expense_amount"],
+        label="Expense amount",
+        value=f'${entries_statistics["expense_amount"]}',
     )
 
     column3.metric(
-        label="Total",
-        value=entries_statistics["total_amount"],
+        label="Total amount",
+        value=f'${entries_statistics["total_amount"]}',
     )
