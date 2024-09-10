@@ -35,6 +35,7 @@ def display():
             "amount",
             "due_date",
             "status",
+            "frequency",
         ],
         column_config={
             "uuid": st.column_config.TextColumn(
@@ -59,6 +60,12 @@ def display():
                 label="Status",
                 options=[status for status in models.Status],
                 required=True,
+            ),
+            "frequency": st.column_config.SelectboxColumn(
+                label="Frequency",
+                options=[frequency for frequency in models.Frequency],
+                required=True,
+                disabled=True,
             ),
         },
     )
