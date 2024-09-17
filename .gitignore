@@ -1,3 +1,0 @@
-.envs/*
-!.envs/template.env
-**/__pycache__/
